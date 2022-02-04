@@ -1,0 +1,50 @@
+/*Question: Populate each next pointer to point to its next right node. If there is no next right node, the next pointer should be set to NULL.
+
+Initially, all next pointers are set to NULL.
+
+*/
+![](images/populating%20next%20pointer.PNG)
+
+/*
+// Definition for a Node.
+class Node {
+public:
+    int val;
+    Node* left;
+    Node* right;
+    Node* next;
+
+    Node() : val(0), left(NULL), right(NULL), next(NULL) {}
+
+    Node(int _val) : val(_val), left(NULL), right(NULL), next(NULL) {}
+
+    Node(int _val, Node* _left, Node* _right, Node* _next)
+        : val(_val), left(_left), right(_right), next(_next) {}
+};
+*/
+
+class Solution {
+public:
+    Node* connect(Node* root) {
+        Node* head = root;
+        Node* temp = new Node(0);
+        Node* curr = temp;
+        while(root) {
+            curr=temp;
+            while(root) {
+                if(root->left) {
+                    curr->next=root->left;
+                    curr = curr->next;
+                }
+                if(root->right) {
+                    curr->next = root->right;
+                    curr=curr->next;
+                }
+                root=root->next;
+            }
+            root=temp->next;
+            temp->next=NULL;
+        }
+        return head;
+    }
+};

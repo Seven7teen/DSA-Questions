@@ -2,9 +2,8 @@
 
 Initially, all next pointers are set to NULL.
 
+Link -- https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/
 */
-<img width="345" alt="populating next pointer" src="https://user-images.githubusercontent.com/68948140/152485076-a36fd9d0-935b-4650-a7e5-dbb278a7646c.PNG">
-
 
 /*
 // Definition for a Node.
